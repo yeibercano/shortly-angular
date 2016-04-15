@@ -4,8 +4,7 @@ angular.module('shortly.links', ['shortly.services'])
   console.log('in LinksController');
   $scope.data = {};
   $scope.getLinks = function() {
-    // return $scope.data.links;
-    console.log('yes');
+    return $scope.data.links;
   };
   $scope.getLinks();
 });
