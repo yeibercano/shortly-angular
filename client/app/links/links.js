@@ -7,8 +7,12 @@ angular.module('shortly.links', [])
     // return $scope.data.links;
     Links.getLinks()
     .then(function(data) {
-      return response.data
+      console.log('this is Data:', data);
+      $scope.data.links = data.data;
     })
+    .catch(function (error) {
+        console.error(error);
+    });
   };
   $scope.getLinks();
 });
@@ -16,13 +20,13 @@ angular.module('shortly.links', [])
 //invoke links.getLinks() and passed the links stored
 // links.getLinks($scope.data.links);
 
-  $scope.signin = function () {
-    Auth.signin($scope.user)
-      .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+  // $scope.signin = function () {
+  //   Auth.signin($scope.user)
+  //     .then(function (token) {
+  //       $window.localStorage.setItem('com.shortly', token);
+  //       $location.path('/links');
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //     });
+  // };
