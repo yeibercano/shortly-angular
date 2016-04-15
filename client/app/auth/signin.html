@@ -1,9 +1,12 @@
 <div id='signin'>
   <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
+  <!-- <p ng-if="signinForm.username.$invalid.ng-touched"> Please fill out your username</p> -->
+  <form name="signinForm" novalidate ng-required='true' ng-submit='signin()'>
+    <!-- <fieldset> -->
+      <input type='text'name="username" ng-model='user.username' ng-required='true' placeholder="username">
+      <input type="password" ng-model='user.password' ng-required='true' placeholder="password">
+    <!-- </fieldset> -->
+    <button>Sign in</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>
