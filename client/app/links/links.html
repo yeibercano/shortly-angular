@@ -1,7 +1,12 @@
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
   <h1>Links</h1>
-  <h1></h1>
+    <nav class='navigation'>
+    <ul>
+      <li><a ng-href='#/links' >Links</a></li>
+      <li><a ng-href='#/shorten' >Shorten</a></li>
+    </ul>
+    </nav>
   <p ng-show='data.links'>{{data.links}}</p>
 </div>
 
