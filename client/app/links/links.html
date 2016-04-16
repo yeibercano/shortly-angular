@@ -11,8 +11,9 @@
     <li ng-show='data.links' ng-repeat="link in data.links | orderBy:'visits'">
       <a href={{link.url}} target="_blank" 
       ng-model="link.visits" 
-      ng-click="increment(link.visits)">{{link.url}}</a>
-      <h1>{{link.visits}}</h1>
+      ng-click="increment(link.visits)"><img ng-src="/assets/redirect_icon.png">{{link.url}}</a>
+      <span style="font-size: 30px; padding-left: 5px;">{{link.visits}} visits</span>
+      <h1>{{link.visits}} </h1>
     </li>
   </ul>
 </div>

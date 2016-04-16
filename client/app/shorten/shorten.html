@@ -18,7 +18,7 @@
       ng-required='true' 
       placeholder="http://www.example.com" >
     <!-- </fieldset> -->
-    <button ng-disabled="shortenForm.url.$invalid">Submit</button>
+    <button type="submit" ng-disabled="shortenForm.url.$invalid" ng-click="go('/links')">Submit</button>
     <p ng-show="shortenForm.url.$invalid && shortenForm.url.$touched "> Not a valid URL </p>
     <p ng-show='link.url'>{{link.url}}</p>
   </form>
