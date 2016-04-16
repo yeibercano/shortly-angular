@@ -3,8 +3,22 @@
   <!-- <p ng-if="signinForm.username.$invalid.ng-touched"> Please fill out your username</p> -->
   <form name="signinForm" novalidate ng-required='true' ng-submit='signin()'>
     <!-- <fieldset> -->
-      <input type='text'name="username" ng-model='user.username' ng-required='true' placeholder="username">
-      <input type="password" ng-model='user.password' ng-required='true' placeholder="password">
+      <input type='text'
+      name="username"
+      ng-minlength="6" 
+      ng-maxlength="30" 
+      ng-model='user.username' 
+      ng-required='true' 
+      placeholder="username" >
+      <p ng-show="signinForm.username.$invalid && signinForm.username.$touched  "> please fill out your username </p>
+    <input type="password"
+      name="password"
+      ng-minlength="6" 
+      ng-maxlength="30" 
+      ng-model='user.password' 
+      ng-required='true' 
+      placeholder="password" >
+        <p ng-show="signinForm.password.$invalid && signinForm.password.$touched  "> please fill out your password </p>
     <!-- </fieldset> -->
     <button>Sign in</button>
   </form>
