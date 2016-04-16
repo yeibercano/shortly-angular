@@ -11,19 +11,18 @@
   <form name="shortenForm" novalidate ng-required='true' ng-submit='addLink()'>
     <!-- <fieldset> -->
       <input type='url'
-      ng-value='link.url'
-      name="url"
+      name='url'
       ng-minlength="6" 
       ng-maxlength="250" 
       ng-model='link.url' 
       ng-required='true' 
       placeholder="http://www.example.com" >
     <!-- </fieldset> -->
-    <button>Submit</button>
+    <button ng-disabled="shortenForm.url.$invalid">Submit</button>
     <p ng-show="shortenForm.url.$invalid && shortenForm.url.$touched "> Not a valid URL </p>
+    <p ng-show='link.url'>{{link.url}}</p>
   </form>
-<!--   <p ng-show='link.url'>{{link.url}}</p>
- -->
+
  </div>
 
 
