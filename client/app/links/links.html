@@ -9,7 +9,9 @@
     </nav>
   <ul>
     <li ng-show='data.links' ng-repeat="link in data.links | orderBy:'visits'">
-      <a href={{link.url}} target="_blank">{{link.url}}</a>
+      <a href={{link.url}} target="_blank" 
+      ng-model="link.visits" 
+      ng-click="increment(link.visits)">{{link.url}}</a>
       <h1>{{link.visits}}</h1>
     </li>
   </ul>
